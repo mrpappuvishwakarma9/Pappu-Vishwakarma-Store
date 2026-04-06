@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पप्पू विश्वकर्मा स्टोर - प्रीमियम</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="lockScreen">
+    <div class="lock-box">
+        <h2 style="color:var(--primary-color)">डिजिटल शोरूम</h2>
+        <p>प्रवेश के लिए पासवर्ड दर्ज करें</p>
+        <input type="password" id="sitePassInput" placeholder="पासवर्ड यहाँ लिखें">
+        <button class="btn" onclick="checkSitePassword()">प्रवेश करें</button>
+    </div>
+</div>
+
+<div id="mainWebsite" class="hidden">
+    <header onclick="handleAdminSecret()">
+        <h1>पप्पू विश्वकर्मा स्टोर</h1>
+        <p>छतरपुर का भरोसेमंद आयरन स्टोर</p>
+    </header>
+
+    <div class="container">
+        <div id="storeView">
+            <div class="search-row">
+                <select id="customLangSelect" onchange="changeLang(this.value)">
+                    <option value="hi">हिन्दी</option>
+                    <option value="en">English</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+                <input type="text" id="smartSearch" placeholder="🔍 नाम या बजट से खोजें..." onkeyup="filterProducts()">
+            </div>
+            <div id="loader" style="text-align:center; padding:20px; font-weight:bold;">डेटा लोड हो रहा है...</div>
+            <div id="productList"></div>
+        </div>
+
+        <div id="bookingView" class="hidden">
+            <div class="card">
+                <h2 style="color:var(--primary-color); text-align:center;">🛍️ ऑर्डर बुकिंग फॉर्म</h2>
+                <p id="selectedItemName" style="background:#e8f5e9; padding:15px; border-radius:12px; font-weight:bold; color:var(--primary-color); text-align:center;"></p>
+                <form id="orderForm">
+                    <label>👤 आपका शुभ नाम:</label>
+                    <input type="text" id="uName" placeholder="नाम लिखें" required>
+                    <label>📞 मोबाइल नंबर:</label>
+                    <input type="tel" id="uPhone" placeholder="नंबर लिखें" required>
+                    <label>🏡 आपका क्षेत्र/गाँव:</label>
+                    <select id="uVillage" required>
+                        <option value="छतरपुर">छतरपुर शहर</option>
+                        <option value="नौगाँव">नौगाँव</option>
+                        <option value="बिजावर">बिजावर</option>
+                        <option value="महाराजपुर">महाराजपुर</option>
+                    </select>
+                    <label>📍 घर का पूरा पता (लैंडमार्क के साथ):</label>
+                    <textarea id="uAddress" rows="4" placeholder="मकान नंबर, गली और लैंडमार्क..." required></textarea>
+                    <button type="submit" class="btn" style="margin-top:20px;">📲 व्हाट्सएप पर बुकिंग भेजें</button>
+                    <button type="button" class="btn" style="background:#888; margin-top:15px;" onclick="goHome()">पीछे जाएँ</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="adminView" class="hidden">
+            <div class="card admin-section">
+                <h2>⚙️ एडमिन कंट्रोल पैनल</h2>
+                <div class="settings-box">
+                    <h4>🔐 वेबसाइट पासवर्ड बदलें</h4>
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="newSitePass" placeholder="नया पासवर्ड">
+                        <button class="btn" style="width:auto; padding:0 20px;" onclick="updateSitePassword()">सेव करें</button>
+                    </div>
+                </div>
+                <h3>📦 ऑर्डर हिस्ट्री</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>तारीख</th><th>ग्राहक</th><th>वस्तु</th><th>पता</th></tr></thead>
+                        <tbody id="orderHistoryTableBody"></tbody>
+                    </table>
+                </div>
+                <button class="btn" style="background:#e74c3c; width:auto; font-size:12px; padding:10px 15px;" onclick="clearOrders()">हिस्ट्री साफ़ करें</button>
+            </div>
+            <div class="card admin-section" style="border-top-color: var(--accent-color);">
+                <h3>📋 स्टॉक लिस्ट</h3>
+                <div class="table-wrapper"><table id="stockTable"><tbody id="stockTableBody"></tbody></table></div>
+            </div>
+            <button class="btn" style="background:#444; margin-top:20px;" onclick="goHome()">वापस जाएँ</button>
+        </div>
+    </div>
+</div>
+
+<div id="imageViewer" onclick="this.style.display='none'"><img id="fullImage" src=""></div>
+<div id="google_translate_element" style="display:none;"></div>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="script.js"></script>
+</body>
+</html>

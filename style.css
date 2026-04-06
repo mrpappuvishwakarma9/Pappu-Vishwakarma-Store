@@ -1,0 +1,45 @@
+:root {
+    --primary-color: #075e54;
+    --secondary-color: #128c7e;
+    --accent-color: #25d366;
+    --bg-color: #f0f4f3;
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+}
+
+body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; }
+
+#lockScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; justify-content: center; align-items: center; z-index: 9999; }
+.lock-box { background: white; padding: 35px; border-radius: 20px; text-align: center; width: 90%; max-width: 380px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+.lock-box input { width: 100%; padding: 15px; margin: 20px 0; border: 2px solid #ddd; border-radius: 12px; font-size: 18px; text-align: center; }
+
+header { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; text-align: center; padding: 30px 15px; border-radius: 0 0 30px 30px; margin-bottom: 15px; cursor: pointer; }
+
+.container { max-width: 1100px; margin: auto; padding: 0 15px 40px; }
+.search-row { background: var(--card-bg); padding: 15px; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); margin-bottom: 30px; position: sticky; top: 15px; z-index: 500; display: flex; gap: 12px; align-items: center; }
+#customLangSelect { width: 110px; padding: 12px; border-radius: 10px; border: 2px solid #eee; }
+#smartSearch { flex-grow: 1; padding: 12px 18px; border: 2px solid #eee; border-radius: 10px; font-size: 16px; outline: none; }
+
+.card { background: var(--card-bg); padding: 25px; margin: 25px 0; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; }
+.img-grid { display: flex; gap: 15px; overflow-x: auto; margin: 15px 0; }
+.img-grid img { width: 160px; height: 160px; object-fit: cover; border-radius: 15px; border: 2px solid #f0f0f0; cursor: pointer; }
+.specs { display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0; }
+.spec-item { background: #f1f8f6; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: bold; }
+.desc-box { background: #fff9f2; padding: 12px; border-radius: 10px; font-size: 14px; margin: 10px 0; border-left: 5px solid #ff9800; }
+.price-tag { font-size: 24px; color: #d32f2f; font-weight: bold; margin: 15px 0; display: block; }
+
+#bookingView .card { max-width: 650px; margin: 20px auto; padding: 40px; }
+#bookingView label { display: block; margin-top: 25px; margin-bottom: 10px; font-weight: bold; }
+#bookingView input, #bookingView select, #bookingView textarea { width: 100%; padding: 18px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; box-sizing: border-box; }
+
+.btn { background: linear-gradient(to right, var(--accent-color), #1ebe5d); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; width: 100%; font-size: 17px; font-weight: bold; }
+.hidden { display: none !important; }
+
+.table-wrapper { overflow-x: auto; border-radius: 15px; border: 1px solid #eee; margin: 15px 0; }
+table { width: 100%; border-collapse: collapse; min-width: 900px; }
+th { background-color: var(--primary-color); color: white; padding: 16px; text-align: left; }
+td { padding: 15px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+
+.settings-box { background: #fff5f5; border: 2px dashed #ffcdd2; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
+#imageViewer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 10000; }
+#fullImage { max-width: 90%; max-height: 80%; border-radius: 15px; border: 4px solid white; }
