@@ -1,4 +1,4 @@
-let currentSitePass = localStorage.getItem('site_main_password') || "123";
+let currentSitePass = localStorage.getItem('site_main_password') || "9589801368";
 const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRjuadpGVjrkoKzVW8nECVEUfl-445zj-HdFosnR_zF52ieoJvb6KaNjtpsGfFBSYu87qM-R3mfMAwn/pub?output=csv';
 let products = [];
 let orders = JSON.parse(localStorage.getItem('pappu_orders')) || [];
